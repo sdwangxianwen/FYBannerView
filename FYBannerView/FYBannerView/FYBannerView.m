@@ -9,6 +9,7 @@
 #import "FYBannerView.h"
 #import "UIView+FYExtension.h"
 #import "FYBannerCollectionViewCell.h"
+#import "FYPageControl.h"
 
 static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCellID";
 
@@ -18,7 +19,7 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
 
 @property(nonatomic,assign) NSInteger currentIndex; //当前的页数
 @property(nonatomic, strong) NSTimer *timers; //定时器
-@property(nonatomic,strong) UIPageControl  *pageControl; //页面指示器
+@property(nonatomic,strong) FYPageControl  *pageControl; //页面指示器
 
 @end
 
@@ -47,10 +48,15 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     self.collectionView.dataSource = self;
     [self addSubview:self.collectionView];
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame) - 20, self.fy_width, 20)];
+    self.pageControl = [[FYPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame) - 20, self.fy_width, 20)];
     [self.pageControl setNumberOfPages:5];
     [self.pageControl setCurrentPageIndicatorTintColor:[UIColor greenColor]];
     [self.pageControl setPageIndicatorTintColor:[UIColor whiteColor]];
+   
+//    [self.pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_currentPageImage"];
+//    [self.pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_pageImage"];
+    
+
     
     [self addSubview:self.pageControl];
     
@@ -96,6 +102,7 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     return index % 5;
 }
 
+//滑动的时候
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     self.pageControl.currentPage = [self pageControlIndexWithCurrentCellIndex:[self getCurrentIndex]];
 }
@@ -106,7 +113,7 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     index = (self.collectionView.contentOffset.x + self.layout.itemSize.width / 2)/self.layout.itemSize.width;
     return MAX(0, index);
 }
-
+//开启定时器
 -(void)startTimer{
     [self invalidateTimer];
     self.currentIndex = [self currentIndex];
@@ -114,6 +121,7 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     [[NSRunLoop mainRunLoop] addTimer:_timers forMode:NSRunLoopCommonModes];
 }
 
+//注销定时器
 -(void)invalidateTimer{
     if (_timers != nil){
         [_timers invalidate];

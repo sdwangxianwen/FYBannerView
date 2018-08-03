@@ -20,6 +20,7 @@
 		211CC3AD2114494300B067D8 /* FYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */; };
 		211CC3B02114495700B067D8 /* FYBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AF2114495700B067D8 /* FYBannerModel.m */; };
 		211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3B221144A7300B067D8 /* UIView+FYExtension.m */; };
+		211CC3B6211458E900B067D8 /* FYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3B5211458E800B067D8 /* FYPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		211CC3AF2114495700B067D8 /* FYBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerModel.m; sourceTree = "<group>"; };
 		211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExtension.h"; sourceTree = "<group>"; };
 		211CC3B221144A7300B067D8 /* UIView+FYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYExtension.m"; sourceTree = "<group>"; };
+		211CC3B4211458E800B067D8 /* FYPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYPageControl.h; sourceTree = "<group>"; };
+		211CC3B5211458E800B067D8 /* FYPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */,
 				211CC3AE2114495700B067D8 /* FYBannerModel.h */,
 				211CC3AF2114495700B067D8 /* FYBannerModel.m */,
+				211CC3B4211458E800B067D8 /* FYPageControl.h */,
+				211CC3B5211458E800B067D8 /* FYPageControl.m */,
 				211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */,
 				211CC3B221144A7300B067D8 /* UIView+FYExtension.m */,
 			);
@@ -301,6 +306,7 @@
 				211CC385211446B400B067D8 /* main.m in Sources */,
 				211CC374211446B300B067D8 /* AppDelegate.m in Sources */,
 				211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */,
+				211CC3B6211458E900B067D8 /* FYPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
