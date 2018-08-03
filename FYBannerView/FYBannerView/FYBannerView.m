@@ -89,6 +89,9 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [self startTimer];
 }
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self invalidateTimer];
+}
 -(NSInteger)pageControlIndexWithCurrentCellIndex:(NSInteger)index{
     return index % 5;
 }
