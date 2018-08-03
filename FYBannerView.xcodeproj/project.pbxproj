@@ -16,6 +16,10 @@
 		211CC385211446B400B067D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC384211446B400B067D8 /* main.m */; };
 		211CC38F211446B400B067D8 /* FYBannerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC38E211446B400B067D8 /* FYBannerViewTests.m */; };
 		211CC39A211446B400B067D8 /* FYBannerViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC399211446B400B067D8 /* FYBannerViewUITests.m */; };
+		211CC3AA2114492600B067D8 /* FYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3A92114492600B067D8 /* FYBannerView.m */; };
+		211CC3AD2114494300B067D8 /* FYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */; };
+		211CC3B02114495700B067D8 /* FYBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AF2114495700B067D8 /* FYBannerModel.m */; };
+		211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3B221144A7300B067D8 /* UIView+FYExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		211CC395211446B400B067D8 /* FYBannerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYBannerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		211CC399211446B400B067D8 /* FYBannerViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerViewUITests.m; sourceTree = "<group>"; };
 		211CC39B211446B400B067D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211CC3A82114492600B067D8 /* FYBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerView.h; sourceTree = "<group>"; };
+		211CC3A92114492600B067D8 /* FYBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerView.m; sourceTree = "<group>"; };
+		211CC3AB2114494300B067D8 /* FYBannerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerCollectionViewCell.h; sourceTree = "<group>"; };
+		211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerCollectionViewCell.m; sourceTree = "<group>"; };
+		211CC3AE2114495700B067D8 /* FYBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerModel.h; sourceTree = "<group>"; };
+		211CC3AF2114495700B067D8 /* FYBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerModel.m; sourceTree = "<group>"; };
+		211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExtension.h"; sourceTree = "<group>"; };
+		211CC3B221144A7300B067D8 /* UIView+FYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 				211CC373211446B300B067D8 /* AppDelegate.m */,
 				211CC375211446B300B067D8 /* ViewController.h */,
 				211CC376211446B300B067D8 /* ViewController.m */,
+				211CC3A72114490600B067D8 /* FYBannerView */,
 				211CC378211446B300B067D8 /* Main.storyboard */,
 				211CC37E211446B400B067D8 /* Assets.xcassets */,
 				211CC380211446B400B067D8 /* LaunchScreen.storyboard */,
@@ -133,6 +146,21 @@
 				211CC39B211446B400B067D8 /* Info.plist */,
 			);
 			path = FYBannerViewUITests;
+			sourceTree = "<group>";
+		};
+		211CC3A72114490600B067D8 /* FYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				211CC3A82114492600B067D8 /* FYBannerView.h */,
+				211CC3A92114492600B067D8 /* FYBannerView.m */,
+				211CC3AB2114494300B067D8 /* FYBannerCollectionViewCell.h */,
+				211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */,
+				211CC3AE2114495700B067D8 /* FYBannerModel.h */,
+				211CC3AF2114495700B067D8 /* FYBannerModel.m */,
+				211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */,
+				211CC3B221144A7300B067D8 /* UIView+FYExtension.m */,
+			);
+			path = FYBannerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211CC3AA2114492600B067D8 /* FYBannerView.m in Sources */,
+				211CC3B02114495700B067D8 /* FYBannerModel.m in Sources */,
+				211CC3AD2114494300B067D8 /* FYBannerCollectionViewCell.m in Sources */,
 				211CC37D211446B300B067D8 /* FYBannerView.xcdatamodeld in Sources */,
 				211CC377211446B300B067D8 /* ViewController.m in Sources */,
 				211CC385211446B400B067D8 /* main.m in Sources */,
 				211CC374211446B300B067D8 /* AppDelegate.m in Sources */,
+				211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

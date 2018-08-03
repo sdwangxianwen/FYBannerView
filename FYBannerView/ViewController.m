@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FYBannerView.h"
+#import "UIView+FYExtension.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    FYBannerView *banerView = [[FYBannerView alloc] initWithFrame:CGRectMake(0, 64, self.view.fy_width, 180)];
+    [self.view addSubview:banerView];
+    
 }
 
 
