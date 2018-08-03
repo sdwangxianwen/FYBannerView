@@ -17,8 +17,8 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
 @property(nonatomic,strong) UICollectionViewFlowLayout *layout;
 
 @property(nonatomic,assign) NSInteger currentIndex; //当前的页数
-
-@property(nonatomic, strong) NSTimer *timers;
+@property(nonatomic, strong) NSTimer *timers; //定时器
+@property(nonatomic,strong) UIPageControl  *pageControl; //页面指示器
 
 @end
 
@@ -46,6 +46,14 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self addSubview:self.collectionView];
+    
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame) - 20, self.fy_width, 20)];
+    [self.pageControl setNumberOfPages:5];
+    [self.pageControl setCurrentPageIndicatorTintColor:[UIColor greenColor]];
+    [self.pageControl setPageIndicatorTintColor:[UIColor whiteColor]];
+    
+    [self addSubview:self.pageControl];
+    
     [self startTimer];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -62,30 +70,32 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     NSInteger currentIndex = [self getCurrentIndex];
     NSInteger pageIndex = currentIndex + 1;
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
-//    [UIView animateWithDuration:0.2 animations:^{
-//         cell.transform = CGAffineTransformMakeScale(0.85, 0.85);
-//    } completion:^(BOOL finished) {
-//        [self scrollToIndex:pageIndex];
-//    }];
-    
-    [self scrollToIndex:pageIndex];
-    
+    [UIView animateWithDuration:0.2 animations:^{
+         cell.transform = CGAffineTransformMakeScale(0.85, 0.85);
+    } completion:^(BOOL finished) {
+        cell.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        [self scrollToIndex:pageIndex];
+    }];
 }
 
 -(void)scrollToIndex:(NSInteger)targetIndex{
     if (targetIndex >= 5){
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:5/2 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         return;
     }
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-   
     [self startTimer];
-   
+}
+-(NSInteger)pageControlIndexWithCurrentCellIndex:(NSInteger)index{
+    return index % 5;
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    self.pageControl.currentPage = [self pageControlIndexWithCurrentCellIndex:[self getCurrentIndex]];
+}
 
 //MARK:获取当前页数
 -(NSInteger)getCurrentIndex {
@@ -97,7 +107,7 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
 -(void)startTimer{
     [self invalidateTimer];
     self.currentIndex = [self currentIndex];
-    _timers = [NSTimer timerWithTimeInterval:1.2 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
+    _timers = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timers forMode:NSRunLoopCommonModes];
 }
 
