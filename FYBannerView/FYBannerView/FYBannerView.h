@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol FYBannerViewDelegate <NSObject>
+-(void)clickBannerIndex:(NSInteger)index;
+@end
 @interface FYBannerView : UIView
+@property(nonatomic,weak) id<FYBannerViewDelegate>delegate;
 
 @end

@@ -10,7 +10,7 @@
 #import "FYBannerView.h"
 #import "UIView+FYExtension.h"
 
-@interface ViewController ()
+@interface ViewController ()<FYBannerViewDelegate>
 
 @end
 
@@ -20,8 +20,11 @@
     [super viewDidLoad];
     
     FYBannerView *banerView = [[FYBannerView alloc] initWithFrame:CGRectMake(0, 64, self.view.fy_width, 180)];
+    banerView.delegate = self;
     [self.view addSubview:banerView];
-    
+}
+-(void)clickBannerIndex:(NSInteger)index {
+    NSLog(@"点击了第%ld个",index);
 }
 
 

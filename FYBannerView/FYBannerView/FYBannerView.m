@@ -70,6 +70,11 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     cell.backgroundColor =  [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:1];
     return cell;
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickBannerIndex:)]) {
+        [self.delegate clickBannerIndex:indexPath.row];
+    }
+}
 
 //MARK:自动滚动
 -(void)automaticScroll {
