@@ -12,5 +12,6 @@
 @property(nonatomic,copy) NSString *imageName;
 @property(nonatomic,copy) NSString *banckImageName;
 @property(nonatomic,copy) NSString *imageUrl;
+@property(nonatomic,strong) NSString  *titleString;
 
 @end

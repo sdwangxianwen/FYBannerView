@@ -15,6 +15,6 @@ typedef void(^clickBlock)(NSInteger index);
 @interface FYBannerView : UIView
 @property(nonatomic,weak) id<FYBannerViewDelegate>delegate;
 
--(instancetype)initWithFrame:(CGRect)frame dataArr:(NSArray *)dataArr;
+-(instancetype)initWithFrame:(CGRect)frame dataArr:(NSArray *)dataArr titleArr:(NSArray *)titleArr;
 
 @end

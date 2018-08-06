@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FYBannerModel.h"
 
 @interface FYBannerCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong) UIImageView  *imageView;
 @property(nonatomic,strong) UILabel  *titleLabel;
+@property(nonatomic,strong) FYBannerModel  *model;
 
 
 @end

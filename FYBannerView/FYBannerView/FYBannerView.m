@@ -20,14 +20,24 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
 @property(nonatomic,assign) NSInteger currentIndex; //当前的页数
 @property(nonatomic, strong) NSTimer *timers; //定时器
 @property(nonatomic,strong) FYPageControl  *pageControl; //页面指示器
+@property(nonatomic,strong) NSArray  *dataArr;;
 
 @end
 
 @implementation FYBannerView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+-(instancetype)initWithFrame:(CGRect)frame dataArr:(NSArray *)dataArr titleArr:(NSArray *)titleArr {
     self = [super initWithFrame:frame];
     if (self) {
+        NSMutableArray *arrM = [NSMutableArray array];
+        for (NSInteger i = 0 ; i < dataArr.count; i++) {
+            FYBannerModel *model = [[FYBannerModel alloc] init];
+            model.imageUrl = dataArr[i];
+            model.titleString = titleArr[i];
+            [arrM addObject:model];
+        }
+        self.dataArr = arrM.copy;
+        
         [self setupUI];
     }
     return self;
@@ -63,12 +73,11 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     [self startTimer];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return self.dataArr.count;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FYBannerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:FYBannerCollectionViewCellID forIndexPath:indexPath];
-    cell.backgroundColor =  [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:1];
-    cell.titleLabel.text = [NSString stringWithFormat:@"第%ld个",indexPath.row];
+    cell.model = self.dataArr[indexPath.row];
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,12 +91,13 @@ static NSString *const FYBannerCollectionViewCellID = @"FYBannerCollectionViewCe
     NSInteger currentIndex = [self getCurrentIndex];
     NSInteger pageIndex = currentIndex + 1;
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
-    [UIView animateWithDuration:0.2 animations:^{
-         cell.transform = CGAffineTransformMakeScale(0.85, 0.85);
-    } completion:^(BOOL finished) {
-        cell.transform = CGAffineTransformMakeScale(1.0, 1.0);
-        [self scrollToIndex:pageIndex];
-    }];
+    [self scrollToIndex:pageIndex];
+//    [UIView animateWithDuration:0.2 animations:^{
+//         cell.transform = CGAffineTransformMakeScale(0.85, 0.85);
+//    } completion:^(BOOL finished) {
+//        cell.transform = CGAffineTransformMakeScale(1.0, 1.0);
+//        [self scrollToIndex:pageIndex];
+//    }];
 }
 
 -(void)scrollToIndex:(NSInteger)targetIndex{
