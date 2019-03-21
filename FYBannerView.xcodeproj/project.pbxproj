@@ -16,11 +16,7 @@
 		211CC385211446B400B067D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC384211446B400B067D8 /* main.m */; };
 		211CC38F211446B400B067D8 /* FYBannerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC38E211446B400B067D8 /* FYBannerViewTests.m */; };
 		211CC39A211446B400B067D8 /* FYBannerViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC399211446B400B067D8 /* FYBannerViewUITests.m */; };
-		211CC3AA2114492600B067D8 /* FYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3A92114492600B067D8 /* FYBannerView.m */; };
-		211CC3AD2114494300B067D8 /* FYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */; };
-		211CC3B02114495700B067D8 /* FYBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3AF2114495700B067D8 /* FYBannerModel.m */; };
 		211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3B221144A7300B067D8 /* UIView+FYExtension.m */; };
-		211CC3B6211458E900B067D8 /* FYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CC3B5211458E800B067D8 /* FYPageControl.m */; };
 		617EA3F3A1989F5CC4F38BC1 /* libPods-FYBannerViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2259FD1CA9BC17A536385F6A /* libPods-FYBannerViewUITests.a */; };
 		63A92F95D29ABCA265ADF70C /* libPods-FYBannerViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C455FD2D1F4D4ECFEC134FF /* libPods-FYBannerViewTests.a */; };
 		9581825E17968E89E8E0D0F1 /* libPods-FYBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334D2781445437B549672FF0 /* libPods-FYBannerView.a */; };
@@ -61,16 +57,8 @@
 		211CC395211446B400B067D8 /* FYBannerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYBannerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		211CC399211446B400B067D8 /* FYBannerViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerViewUITests.m; sourceTree = "<group>"; };
 		211CC39B211446B400B067D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		211CC3A82114492600B067D8 /* FYBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerView.h; sourceTree = "<group>"; };
-		211CC3A92114492600B067D8 /* FYBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerView.m; sourceTree = "<group>"; };
-		211CC3AB2114494300B067D8 /* FYBannerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerCollectionViewCell.h; sourceTree = "<group>"; };
-		211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerCollectionViewCell.m; sourceTree = "<group>"; };
-		211CC3AE2114495700B067D8 /* FYBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBannerModel.h; sourceTree = "<group>"; };
-		211CC3AF2114495700B067D8 /* FYBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBannerModel.m; sourceTree = "<group>"; };
 		211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExtension.h"; sourceTree = "<group>"; };
 		211CC3B221144A7300B067D8 /* UIView+FYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYExtension.m"; sourceTree = "<group>"; };
-		211CC3B4211458E800B067D8 /* FYPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYPageControl.h; sourceTree = "<group>"; };
-		211CC3B5211458E800B067D8 /* FYPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYPageControl.m; sourceTree = "<group>"; };
 		2259FD1CA9BC17A536385F6A /* libPods-FYBannerViewUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FYBannerViewUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EB919E3861D0587A9A3870 /* Pods-FYBannerViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYBannerViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FYBannerViewTests/Pods-FYBannerViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		334D2781445437B549672FF0 /* libPods-FYBannerView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FYBannerView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,14 +172,6 @@
 		211CC3A72114490600B067D8 /* FYBannerView */ = {
 			isa = PBXGroup;
 			children = (
-				211CC3A82114492600B067D8 /* FYBannerView.h */,
-				211CC3A92114492600B067D8 /* FYBannerView.m */,
-				211CC3AB2114494300B067D8 /* FYBannerCollectionViewCell.h */,
-				211CC3AC2114494300B067D8 /* FYBannerCollectionViewCell.m */,
-				211CC3AE2114495700B067D8 /* FYBannerModel.h */,
-				211CC3AF2114495700B067D8 /* FYBannerModel.m */,
-				211CC3B4211458E800B067D8 /* FYPageControl.h */,
-				211CC3B5211458E800B067D8 /* FYPageControl.m */,
 				211CC3B121144A6D00B067D8 /* UIView+FYExtension.h */,
 				211CC3B221144A7300B067D8 /* UIView+FYExtension.m */,
 			);
@@ -398,15 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				211CC3AA2114492600B067D8 /* FYBannerView.m in Sources */,
-				211CC3B02114495700B067D8 /* FYBannerModel.m in Sources */,
-				211CC3AD2114494300B067D8 /* FYBannerCollectionViewCell.m in Sources */,
 				211CC37D211446B300B067D8 /* FYBannerView.xcdatamodeld in Sources */,
 				211CC377211446B300B067D8 /* ViewController.m in Sources */,
 				211CC385211446B400B067D8 /* main.m in Sources */,
 				211CC374211446B300B067D8 /* AppDelegate.m in Sources */,
 				211CC3B321144A7300B067D8 /* UIView+FYExtension.m in Sources */,
-				211CC3B6211458E900B067D8 /* FYPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class PPBaseViewController;
 @interface UIView (FYExtension)
 @property (nonatomic, assign) CGFloat fy_x;
 @property (nonatomic, assign) CGFloat fy_y;
@@ -18,6 +18,10 @@
 @property (nonatomic, assign) CGSize  fy_size;
 @property (nonatomic, assign) CGPoint fy_origin;
 @property (nonatomic, assign, readonly) CGFloat fy_maxX;
+@property (nonatomic, assign, readonly) CGFloat fy_minX;
 @property (nonatomic, assign, readonly) CGFloat fy_maxY;
+@property (nonatomic, assign, readonly) CGFloat fy_minY;
+
+- (PPBaseViewController *)getCurrentViewController;
 
 @end

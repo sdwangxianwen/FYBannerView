@@ -103,4 +103,21 @@
     return self.frame.origin.y + self.frame.size.height;
 }
 
+-(CGFloat)fy_minX {
+    return CGRectGetMinX(self.frame);
+}
+-(CGFloat)fy_minY {
+    return CGRectGetMinY(self.frame);
+}
+- (PPBaseViewController *)getCurrentViewController {
+    UIResponder *next = [self nextResponder];
+    do {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            return (PPBaseViewController *)next;
+        }
+        next = [next nextResponder];
+    } while (next != nil);
+    return nil;
+}
+
 @end
